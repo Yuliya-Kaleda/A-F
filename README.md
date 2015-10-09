@@ -17,7 +17,7 @@ The endpoint provided in the instructions (http://www.abercrombie.com/anf/native
 
 The app was tested on Android version 4.4.4, Moto G(model number). In the specifications there was no requirement to make the app compatible with various Android versions.
 
-I wish I could devote more time to design aspects. I hope to demonstrate my design skill further down the road.
+I wish I could devote more time to design aspects(colors, font, UX flow, etc.). The app is just a draft version of how I would start approaching design and UI. I hope to demonstrate my design skill further down the road.
 
 ## License
 
