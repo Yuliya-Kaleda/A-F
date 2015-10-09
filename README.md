@@ -15,6 +15,8 @@
 #Comments
 The endpoint provided in the instructions (http://www.abercrombie.com/anf/nativeapp/Feeds/promotions.json) should be corrected as far as map data is concerned. In the JSON array "promotions" there is a field "button", which is an object in first case and an array in the second case. I was not sure whether it was done intentionally or it was a bug. That is the reason why I provided url constants in the class CardActivity.
 
+The app was tested on Android version 4.4.4, Moto G(model number). In the specifications there was no requirement to make the app compatible with various Android versions.
+
 I wish I could devote more time to design aspects. I hope to demonstrate my design skill further down the road.
 
 ## License
