@@ -9,7 +9,7 @@
 ## Usage
 
 1. The app includes a sliding panel, which provides the users with the information about promotions. If the app is initially started in offline mode, there is a default image on the panel.
-2.Floating action button directs the users to a certain webpage.
+2. Floating action button directs the users to a certain webpage.
 3. The data is cached for offline use.
 
 #Comments
