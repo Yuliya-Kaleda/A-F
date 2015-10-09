@@ -2,6 +2,7 @@ package nyc.c4q.yuliyakaleda.af;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,20 +28,25 @@ import retrofit.Retrofit;
 
 public class PromotionsActivity extends AppCompatActivity {
     private static final String BASE_URL = "http://www.abercrombie.com/anf/nativeapp/Feeds/promotions.json";
+    private static final String SHARED_PREFERENCE = "preferences";
+    private static final String IS_DATA_CACHED = "isDataCached";
     private static final String TAG = "nyc.c4q.yuliyakaleda.af";
     private static final String CACHE_FOLDER = "responses";
     private static final String PROMOTION = "promotion";
+    private SharedPreferences preferences;
     private TableLayout table;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotions);
+        preferences = getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE);
+        boolean isDataCached = preferences.getBoolean(IS_DATA_CACHED, false);
         table = (TableLayout) findViewById(R.id.table_promotions);
 
         //It sets the default image of the sliding panel when there is no network connectivity.
-        if (!isNetworkConnected()) {
-          table.setBackgroundResource(R.drawable.aber);
+        if (!isNetworkConnected() && !isDataCached) {
+            table.setBackgroundResource(R.drawable.abercrombie);
         }
 
         //It generates an implementation of the RetrofitService class.
@@ -68,6 +74,7 @@ public class PromotionsActivity extends AppCompatActivity {
                         promotionTitle.setText(promotion.getTitle());
                         Picasso.with(PromotionsActivity.this).load(promotion.getImage()).into(promotionImage);
                         table.addView(row);
+                        preferences.edit().putBoolean(IS_DATA_CACHED, true).apply();
 
                         //It sets every row onClickListener.
                         row.setOnClickListener(new View.OnClickListener() {
