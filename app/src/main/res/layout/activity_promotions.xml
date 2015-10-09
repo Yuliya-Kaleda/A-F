@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="68dp"
+    sothree:umanoShadowHeight="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/primary_material_dark">
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/year"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/abercrombie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/abercrombie_greeting"
+            android:textSize="27sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/year"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_york"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/abercrombie"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/table_promotions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="50dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:background="#424242" />
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
